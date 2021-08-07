@@ -16,6 +16,10 @@ public class ControllerExceptionHandler {
 	
 	@ExceptionHandler(CustomValidationException.class)
 	public String validationException(CustomValidationException e) {
+		//CMRespoDto, script 비교
+		//1.클라이언트에게 응답할 때는 Script 좋음
+		//2.Ajax - CMRespoDto
+		//3.Android 통신 - CMRespoDto
 		return Script.back(e.getErrorMap().toString());
 		//		return new CMRespDto(-1,e.getMessage(),e.getErrorMap());
 	}
